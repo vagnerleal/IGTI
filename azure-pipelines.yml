@@ -17,7 +17,7 @@ variables:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'mkdir d:\a\1\MObEAD'
+    script: 'mkdir d:\a\1\MobEAD'
 
 
 - task: NuGetToolInstaller@1
@@ -44,6 +44,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'd:\a\1\a'
-    ArtifactName: 'MobEAD'
+        ArtifactName: 'MobEAD'
+        PathtoPublish: 'd:\a\1\a'
    
