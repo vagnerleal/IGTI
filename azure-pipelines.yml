@@ -45,5 +45,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
         ArtifactName: 'MobEAD'
-        PathtoPublish: 'd:\a\1\a'
+        PathtoPublish: 'd:\a\1\MobEAD'
    
