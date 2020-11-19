@@ -39,7 +39,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'vagnerleal_IGTI'
     projectName: 'IGTI'
-  enabled: false
+  enabled: true
 
 
 - task: VSBuild@1
@@ -48,21 +48,26 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="d:\a\1\mobEAD"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     testAssemblyVer2: '$(Build.SourcesDirectory)/test**.js'
     
-
-
-
 - task: CopyFiles@2
   inputs:
     contents: '**/*.*'
     targetFolder: $(build.artifactStagingDirectory)
+    
 
 - task: PublishBuildArtifacts@1
   inputs:
     artifactName: 'MobEAD'
     pathToPublish: 'd:\a\1\a'
+
+
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
