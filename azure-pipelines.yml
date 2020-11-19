@@ -39,6 +39,8 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'vagnerleal_IGTI'
     projectName: 'IGTI'
+  enabled: false
+
 
 - task: VSBuild@1
   inputs:
@@ -54,9 +56,11 @@ steps:
     
  
 - task: SonarCloudAnalyze@1
+enabled:false
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+  enabled:false
 
 - task: CopyFiles@2
   inputs:
