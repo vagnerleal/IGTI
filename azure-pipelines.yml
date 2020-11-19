@@ -73,6 +73,7 @@ steps:
   inputs:
     artifactName: 'MobEAD'
     pathToPublish: 'd:\a\1\a'
+  enabled: false
 
 
 - task: SonarCloudAnalyze@1
