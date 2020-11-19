@@ -54,13 +54,8 @@ steps:
     configuration: '$(buildConfiguration)'
     testAssemblyVer2: '$(Build.SourcesDirectory)/test**.js'
     
- 
-- task: SonarCloudAnalyze@1
-    enabled:false
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-  enabled:false
+
+
 
 - task: CopyFiles@2
   inputs:
