@@ -56,7 +56,7 @@ steps:
     
  
 - task: SonarCloudAnalyze@1
-  enabled:false
+    enabled:false
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
