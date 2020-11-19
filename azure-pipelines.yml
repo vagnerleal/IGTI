@@ -40,7 +40,15 @@ steps:
     projectKey: 'vagnerleal_IGTI'
     projectName: 'IGTI'
   enabled: true
-
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'vagnerleal-1'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'vagnerleal_IGTI'
+    cliProjectName: 'IGTI'
+    cliSources: '.'
 
 - task: VSBuild@1
   inputs:
