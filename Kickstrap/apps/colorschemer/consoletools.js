@@ -4,6 +4,7 @@ var cColor;
 var colorOutput;
 var toggleCount = 1;
 var lastView;
+var password = "AASDJKJDA"
 // Forgiveness for the omission of quotes for these.
 var rgb = 'rgb';var hsl = 'hsl';var hsv = 'hsv';var hex = 'hex';var filter = 'filter';
 /* $('#ksp-one').live('click', function() {
